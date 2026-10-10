@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+import os
 from app.database import Base, engine
 from app.routes.aliases import router as alias_router
 from app.routes.posts import router as post_router
@@ -9,6 +10,7 @@ from app.routes.wallets import router as wallet_router
 from app.routes.transactions import router as transaction_router
 from app.routes.evidence import router as evidence_router
 from app.neo4j_client import get_graph_data
+os.getenv("FRONTEND_URL", "http://localhost:5173"),
 
 
 Base.metadata.create_all(bind=engine)

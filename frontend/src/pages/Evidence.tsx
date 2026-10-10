@@ -13,7 +13,8 @@ type EvidenceItem = {
   risk_indicator: string;
 };
 
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
 export default function EvidencePage() {
   const [evidence, setEvidence] = useState<EvidenceItem[]>([]);
