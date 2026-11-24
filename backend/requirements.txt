@@ -5,3 +5,5 @@ psycopg2-binary
 python-dotenv
 neo4j
 lingua-language-detector
+langdetect
+deep-translator
