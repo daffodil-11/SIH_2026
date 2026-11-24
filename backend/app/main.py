@@ -24,7 +24,7 @@ os.getenv("FRONTEND_URL", "http://localhost:5173"),
 
 
 Base.metadata.create_all(bind=engine)
-
+import app.seed_data
 
 create_phone_table()
 insert_sample_phone_records()
