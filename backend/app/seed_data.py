@@ -1,6 +1,5 @@
 from app.database import Base, SessionLocal, engine
-from app.models import Alias
-
+from app.models import Alias, Post
 
 Base.metadata.create_all(bind=engine)
 import app.seed_data
@@ -55,6 +54,32 @@ sample_aliases = [
 ]
 
 db.add_all(sample_aliases)
+db.commit()
+sample_posts = [
+    Post(
+        alias_id=1,
+        post_text="Looking for a trusted escrow service for a bulk order. BTC payment only.",
+        language="English",
+        topic="escrow",
+        source_reference="SIM-FORUM-001",
+    ),
+    Post(
+        alias_id=2,
+        post_text="Selling premium accounts. BTC payment accepted. Contact through encrypted chat.",
+        language="English",
+        topic="marketplace",
+        source_reference="SIM-MARKET-001",
+    ),
+    Post(
+        alias_id=3,
+        post_text="Recherche un service escrow fiable pour une commande importante. Paiement en BTC uniquement.",
+        language="French",
+        topic="escrow",
+        source_reference="SIM-CHAT-001",
+    ),
+]
+
+db.add_all(sample_posts)
 db.commit()
 db.close()
 
