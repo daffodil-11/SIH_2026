@@ -3,6 +3,7 @@ from app.models import Alias
 
 
 Base.metadata.create_all(bind=engine)
+import app.seed_data
 
 db = SessionLocal()
 
