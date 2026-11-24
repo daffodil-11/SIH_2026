@@ -6,8 +6,7 @@ import ExplainableScoreCard from "./components/ExplainableScoreCard";
 import InteractiveEvidenceGraph from "./components/InteractiveEvidenceGraph";
 import NetworkGraph from "./components/NetworkGraph";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+const API_BASE_URL = "https://sih-2026-backend-hfq7.onrender.com";
 
 const modules = [
   "Overview",
