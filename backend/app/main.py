@@ -1,5 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.phone_tracking import router as phone_tracking_router
+from app.timeline import router as timeline_router
+from app.priority import router as priority_router
+from app.lead_report import router as lead_report_router
+from app.dual_graph import router as dual_graph_router
+from app.multilingual import router as multilingual_router
 
 import os
 from app.database import Base, engine
@@ -46,7 +52,12 @@ app.include_router(analysis_router, prefix="/analysis")
 app.include_router(evidence_router, prefix="/evidence")
 app.include_router(wallet_router)
 app.include_router(transaction_router)
-
+app.include_router(phone_tracking_router)
+app.include_router(timeline_router)
+app.include_router(priority_router)
+app.include_router(lead_report_router)
+app.include_router(dual_graph_router)
+app.include_router(multilingual_router)
 
 @app.get("/")
 def root():
