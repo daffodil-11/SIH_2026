@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.phone_tracking import router as phone_tracking_router
+from app.phone_tracking import (
+    router as phone_tracking_router,
+    create_phone_table,
+    insert_sample_phone_records,
+)
 from app.timeline import router as timeline_router
 from app.priority import router as priority_router
 from app.lead_report import router as lead_report_router
@@ -21,6 +25,9 @@ os.getenv("FRONTEND_URL", "http://localhost:5173"),
 
 Base.metadata.create_all(bind=engine)
 
+
+create_phone_table()
+insert_sample_phone_records()
 
 app = FastAPI(
     title="Dark Web API",
